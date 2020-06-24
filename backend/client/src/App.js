@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { fetchCompletables } from './actions/fetchCompletables'
-import Accordian from 'react-bootstrap/Accordion'
+import CompletablesContainer from './components/CompletablesContainer'
+
 
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
     if(this.props.loading) {
       return <div>Loading...</div>
     } else {
-      return <p>{this.props.completables.map(completable => completable.title)}</p>
+      return <CompletablesContainer completables={this.props.completables} />
     }
   }
 
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         {console.log(this.state)}
         {this.handleLoading()}
+
       </div>
     )
   }
