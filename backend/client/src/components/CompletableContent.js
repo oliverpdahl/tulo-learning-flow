@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 class CompletableContent extends Component {
   render(){
     return(
-      <Accordion.Collapse eventKey="0">
+      <Accordion.Collapse eventKey={this.props.completable.id}>
         <Card.Body></Card.Body>
       </Accordion.Collapse>
     )
