@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
-import { connect } from 'react-redux'
 import { fetchCompletables } from './actions/fetchCompletables'
 import CompletablesContainer from './components/CompletablesContainer'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 
 
@@ -13,7 +12,6 @@ class App extends Component {
   }
 
   handleLoading = () => {
-    console.log(this.props.loading)
     if(this.props.loading) {
       return <div>Loading...</div>
     } else {
@@ -24,9 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {console.log(this.state)}
         {this.handleLoading()}
-
       </div>
     )
   }

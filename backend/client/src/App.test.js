@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import ReactDOM from 'react-dom';
+import App from './App'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('sums numbers', () => {
+  expect('cat').toEqual('cat');
 });
+
+// test('renders learn to ollie title', () => {
+//   const { getByText } = render(<App />);
+//   const linkElement = getByText(/Learn to Ollie/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
