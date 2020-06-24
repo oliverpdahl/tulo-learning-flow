@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Completable.create(title: "Learn to Ollie")
+Completable.create(title: 'Learn to Ollie')
+Completable.create(title: 'Learn Excell')
+Completable.create(title: 'Learn Compound Fractions')
