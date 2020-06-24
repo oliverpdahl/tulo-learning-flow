@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux'
+import { fetchCompletables } from './actions/fetchCompletables'
 
 
 class App extends Component {
 
-  state = {
-    completables: []
+  componentDidMount() {
+    this.props.fetchCompletables()
   }
 
-  componentDidMount() {
-    fetch('/api/v1/completables')
-    .then(response => response.json())
-    .then(data => { 
-      this.setState({ completables: data})
-    })
+  handleLoading = () => {
+    console.log(this.props.loading)
+    if(this.props.loading) {
+      return <div>Loading...</div>
+    } else {
+      return <p>{this.props.completables.map(completable => completable.title)}</p>
+    }
   }
 
   render() {
     return (
       <div className="App">
-        {this.state.completables.map(completable => completable.title)}
+        {console.log(this.state)}
+        {this.handleLoading()}
       </div>
     )
   }
 }
 
-export default App;
+const mapDispatchToProps = state => {
+  return { 
+    completables: state.completables,
+    loading: state.loading
+  }
+}
+
+export default connect(mapDispatchToProps, {fetchCompletables})(App)
