@@ -10,10 +10,9 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/api/v1/completables')
-    .then(response => response.json)
+    .then(response => response.json())
     .then(data => { 
-      console.log(data)
-      // this.setState({ completables: data.completables})
+      this.setState({ completables: data})
     })
   }
 

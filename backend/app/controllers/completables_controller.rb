@@ -1,6 +1,6 @@
 class CompletablesController < ApplicationController
   def index
-    completables = Completable.order("created_at DESC")
+    completables = Completable.all
     render json: completables
   end
 
