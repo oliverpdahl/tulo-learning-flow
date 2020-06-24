@@ -1,14 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import CompletablesContainer from './components/CompletablesContainer'
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+
+class App extends Component {
+
+  state = {
+    completables: []
+  }
+
+  componentDidMount() {
+    fetch('/api/v1/completables')
+    .then(response => response.json)
+    .then(data => { 
+      console.log(data)
+      // this.setState({ completables: data.completables})
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {this.state.completables.map(completable => completable.title)}
+      </div>
+    )
+  }
 }
 
 export default App;
