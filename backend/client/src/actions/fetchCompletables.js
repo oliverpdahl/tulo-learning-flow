@@ -1,4 +1,4 @@
-export const fetchCompletables = () => {
+const fetchCompletables = () => {
   return (dispatch) => {
     fetch('/api/v1/completables').then(response => {
       return response.json()
@@ -7,3 +7,5 @@ export const fetchCompletables = () => {
     })
   }
 }
+
+export default fetchCompletables

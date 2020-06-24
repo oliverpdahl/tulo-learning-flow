@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchCompletables } from ',/actions/fetchCompletables'
+import fetchCompletables from '../actions/fetchCompletables'
 
 class CompletablesContainer extends Component {
   componentDidMount(){
     console.log(this.props)
     this.props.fetchCompletables()
   }
-  
+
   render() {
     return (
       <div className="completables-container">
