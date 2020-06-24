@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { fetchCompletables } from './actions/fetchCompletables'
+import Accordian from 'react-bootstrap/Accordion'
 
 
 class App extends Component {

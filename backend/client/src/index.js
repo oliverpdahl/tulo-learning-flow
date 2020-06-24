@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import completablesReducer from './completablesReducer.js';
+import './custom.scss';
  
 const store = createStore(completablesReducer, applyMiddleware(thunk));
  
