@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_135328) do
 
   create_table "completables", force: :cascade do |t|
     t.string "title"
+    t.boolean "complete", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
