@@ -4,8 +4,7 @@ import Card from 'react-bootstrap/Card'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle as fasCircle } from '@fortawesome/free-solid-svg-icons'
-import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons'
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons';
 
 
 class CompletableTitle extends Component {

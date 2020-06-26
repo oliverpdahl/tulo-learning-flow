@@ -12,7 +12,7 @@ class CompletableContent extends Component {
             <Row className="bottom-row">
               <Col xs={12} sm={8} md={9}></Col>
               <Col>
-                <Button variant="primary" block>Complete</Button>
+                <Button variant="primary" onClick={() => console.log('butt')} block>Complete</Button>
               </Col>
             </Row>
           </Container>
@@ -22,4 +22,4 @@ class CompletableContent extends Component {
   }
 }
 
-export default CompletableContent 
+export default CompletableContent

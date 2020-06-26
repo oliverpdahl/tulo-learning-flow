@@ -15,7 +15,7 @@ class App extends Component {
     if(this.props.loading) {
       return <div>Loading...</div>
     } else {
-      return <CompletablesContainer completables={this.props.completables} />
+      return <CompletablesContainer completables={this.props.completables}/>
     }
   }
 
