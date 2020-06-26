@@ -8,7 +8,7 @@ class CompletableCard extends Component {
     return(
       <Card>
         <CompletableTitle completable={this.props.completable}/>
-        <CompletableContent completable={this.props.completable}/>
+        <CompletableContent completable={this.props.completable} toggleCompletable={this.props.toggleCompletable}/>
       </Card>
     )
   }

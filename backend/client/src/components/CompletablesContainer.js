@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import CompletableCard from './CompletableCard';
+import { connect } from 'react-redux'
+import { toggleCompletable } from '../actions/toggleCompletable'
 
 class CompletablesContainer extends Component {
   listCompletables = () => {
     return(
-      this.props.completables.map(completable => <CompletableCard key={completable.id} completable={completable}/>)
+      this.props.completables.map(completable => <CompletableCard key={completable.id} completable={completable} toggleCompletable={this.props.toggleCompletable}/>)
     )
   }
   render(){
@@ -17,4 +19,4 @@ class CompletablesContainer extends Component {
   }
 }
 
-export default CompletablesContainer
+export default connect(null, {toggleCompletable})(CompletablesContainer)

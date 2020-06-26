@@ -4,6 +4,11 @@ import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
 
 class CompletableContent extends Component {
+
+  handleOnClick = () => {
+    this.props.toggleCompletable(this.props.completable)
+  }
+
   render(){
     return(
       <Accordion.Collapse eventKey={this.props.completable.id}>
@@ -12,7 +17,7 @@ class CompletableContent extends Component {
             <Row className="bottom-row">
               <Col xs={12} sm={8} md={9}></Col>
               <Col>
-                <Button variant="primary" onClick={() => console.log('butt')} block>Complete</Button>
+                <Button variant="primary" onClick={this.handleOnClick} block>Complete</Button>
               </Col>
             </Row>
           </Container>
