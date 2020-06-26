@@ -1,0 +1,2 @@
+class Node < Completable
+end
