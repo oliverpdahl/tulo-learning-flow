@@ -1,3 +1,3 @@
 class Node < Completable
-  has_and_belongs_to_many :paths
+  belongs_to :path
 end
