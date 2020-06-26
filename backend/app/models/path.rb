@@ -1,0 +1,2 @@
+class Path < Completable
+end
