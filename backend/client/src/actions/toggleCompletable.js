@@ -1,13 +1,9 @@
+import axios from 'axios'
+
 export function toggleCompletable(completable) {
   return (dispatch) => {
-    dispatch({ type: 'TOGGLE_COMPLETABLE', id: completable.id });
-    fetch('/api/v1/completables' + completable.id, {
-        method: 'PATCH',
-        mode: 'CORS',
-        body: JSON.stringify(completable),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).catch(err => err);
+    return axios.patch(`/api/v1/completables/complete/${completable.id}.json`, completable)
+    .then(res => res.data)
+    .then(data => dispatch({ type: 'TOGGLE_COMPLETABLE', id: data.id }))
   };
 }

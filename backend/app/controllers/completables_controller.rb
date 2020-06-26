@@ -4,9 +4,9 @@ class CompletablesController < ApplicationController
     render json: completables
   end
 
-  def update
+  def toggle_complete
     completable = Completable.find(params[:id])
-    completable.update_attributes(completable_param)
+    completable.update(complete: !params[:complete])
     render json: completable
   end
 end
