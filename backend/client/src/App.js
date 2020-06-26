@@ -2,8 +2,11 @@ import { fetchCompletables } from './actions/fetchCompletables'
 import CompletablesContainer from './components/CompletablesContainer'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 class App extends Component {
 
@@ -21,9 +24,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.handleLoading()}
-      </div>
+      <Router>
+        <Link to='/paths' style={{textDecoration: 'none'}}>{this.handleLoading()}</Link>
+      </Router>
     )
   }
 }
