@@ -14,7 +14,13 @@ const completablesReducer = (state = { completables: [], requesting: false }, ac
         completables: action.completables,
         requesting: false
       }
- 
+      
+    case 'TOGGLE_COMPLETED':
+      return {
+        ...state,
+        completables: action.completables,
+        requesting: false
+      }
     default:
       return state;
   }
