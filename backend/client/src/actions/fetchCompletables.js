@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export function fetchCompletables() {
   return (dispatch) => {
     dispatch({ type: 'START_ADDING_COMPLETABLES_REQUEST' });
