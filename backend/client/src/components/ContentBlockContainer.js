@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
+import ContentBlockTextBlock from './ContentBlockTextBlock'
 
 class ContentBlockContainer extends Component {
   render(){
     return(
       <Row>
-        <Col>
-          <p className="text-dark">{this.props.contentBlock.text}</p>
-        </Col>
+        <ContentBlockTextBlock contentBlock={this.props.contentBlock}/>
       </Row>
     )
   }
