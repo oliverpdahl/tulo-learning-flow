@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_192014) do
+ActiveRecord::Schema.define(version: 2020_06_26_192602) do
 
   create_table "completables", force: :cascade do |t|
     t.string "title"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 2020_06_26_192014) do
   create_table "paths", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "paths_nodes", id: false, force: :cascade do |t|
+    t.integer "path_id"
+    t.integer "node_id"
+    t.index ["node_id"], name: "index_paths_nodes_on_node_id"
+    t.index ["path_id"], name: "index_paths_nodes_on_path_id"
   end
 
 end
