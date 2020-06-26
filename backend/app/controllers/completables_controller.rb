@@ -1,7 +1,7 @@
 class CompletablesController < ApplicationController
   def index
     completables = Completable.all
-    render json: completables
+    render json: completables.to_json(include: [:content_blocks])
   end
 
   def toggle_complete
