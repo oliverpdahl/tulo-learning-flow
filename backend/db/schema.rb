@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_140852) do
 
   create_table "content_blocks", force: :cascade do |t|
     t.string "text"
+    t.integer "completable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
