@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_192014) do
   end
 
   create_table "nodes", force: :cascade do |t|
+    t.integer "path_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
