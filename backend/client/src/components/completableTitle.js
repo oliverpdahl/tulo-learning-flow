@@ -15,7 +15,7 @@ class CompletableTitle extends Component {
           <Container fluid>
             <Row>
               <Col xs={0.5}>
-                {this.props.completable.complete ? <FontAwesomeIcon icon={farCircle} /> : <FontAwesomeIcon icon={fasCircle} />}
+                {this.props.completable.complete ? <FontAwesomeIcon icon={fasCircle} /> : <FontAwesomeIcon icon={farCircle} />}
               </Col>
               <Col xs={7}>
                 {this.props.completable.title}

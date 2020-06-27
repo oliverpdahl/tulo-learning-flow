@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_140852) do
     t.string "title"
     t.boolean "complete", default: false
     t.integer "path_id"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

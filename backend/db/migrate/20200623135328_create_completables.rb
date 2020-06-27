@@ -4,6 +4,8 @@ class CreateCompletables < ActiveRecord::Migration[6.0]
       t.string :title
       t.boolean :complete, default: false
       t.integer :path_id
+      t.string :type
+
 
       t.timestamps
     end
