@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_192014) do
+ActiveRecord::Schema.define(version: 2020_06_26_140852) do
 
   create_table "completables", force: :cascade do |t|
     t.string "title"
     t.boolean "complete", default: false
+    t.integer "path_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -22,17 +23,6 @@ ActiveRecord::Schema.define(version: 2020_06_26_192014) do
   create_table "content_blocks", force: :cascade do |t|
     t.string "text"
     t.integer "completable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "nodes", force: :cascade do |t|
-    t.integer "path_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "paths", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
