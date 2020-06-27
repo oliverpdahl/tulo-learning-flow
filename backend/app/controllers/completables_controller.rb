@@ -1,7 +1,7 @@
 class CompletablesController < ApplicationController
   def index
     paths = Path.all
-    render json: paths.to_json(include: [:content_blocks])
+    render json: paths.to_json(include: [:content_blocks, :nodes])
   end
 
   def toggle_complete
