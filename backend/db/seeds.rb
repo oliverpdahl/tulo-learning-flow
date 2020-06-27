@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 kf = Path.create(title: 'Learn to Kickflip')
+kf.content_blocks.create(text: 'The Kickflip is acheived by combining an Ollie and a kick-flick motion towards the front-foot’s heel-side corner of the skateboard. This makes the board flip toward the heel, along the board’s length-axis.')
 fssi = kf.nodes.create(title: 'Learn to Front Side Shove It')
 hf = kf.nodes.create(title: 'Learn to Heelflip')
 ollie = kf.nodes.create(title: 'Learn to Ollie', complete: true)
