@@ -9,10 +9,10 @@ class CompletableCard extends Component {
   render(){
     return(
         <Card>
-        <Link to={slugify(this.props.completable.title).toLocaleLowerCase()} style={{textDecoration: 'none'}}>
-          <CompletableHeader completable={this.props.completable} allCompletables={this.props.allCompletables} />
-          <CompletableContent completable={this.props.completable} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
-        </Link>
+          <Link to={slugify(this.props.completable.title).toLocaleLowerCase()} style={{textDecoration: 'none'}}>
+            <CompletableHeader completable={this.props.completable} allCompletables={this.props.allCompletables} />
+            <CompletableContent completable={this.props.completable} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
+          </Link>
         </Card>
     )
   }
