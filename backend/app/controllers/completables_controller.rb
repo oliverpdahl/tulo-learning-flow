@@ -1,5 +1,10 @@
 class CompletablesController < ApplicationController
   def index
+    completables = Completable.all
+    render json: completables
+  end
+
+  def paths
     paths = Path.all
     render json: paths.to_json(:include => [:content_blocks, :nodes => { 
       :include => :content_blocks
