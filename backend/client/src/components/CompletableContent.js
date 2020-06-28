@@ -17,7 +17,7 @@ class CompletableContent extends Component {
       <Accordion.Collapse eventKey={this.props.completable.id}>
         <Card.Body>
           <Container fluid>
-            <Row className="nodes">
+            <Row className="nodes pb-3">
               <Col>
                 {!!this.props.completable.nodes && <CompletablesContainer localCompletables={this.props.completable.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>}
               </Col>

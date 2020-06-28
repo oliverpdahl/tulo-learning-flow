@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row, Container, Media } from 'react-bootstrap'
 import ContentBlockTextBlock from './ContentBlockTextBlock'
 
 class ContentBlockContainer extends Component {
   render(){
     return(
-      <Row>
-        <ContentBlockTextBlock contentBlock={this.props.contentBlock}/>
-      </Row>
+      <Media>
+        <Media.Body>
+          <ContentBlockTextBlock contentBlock={this.props.contentBlock}/>
+        </Media.Body>
+      </Media>
     )
   }
 }
