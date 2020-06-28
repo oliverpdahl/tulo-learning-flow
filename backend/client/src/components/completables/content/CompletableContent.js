@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
 import ContentBlockContainer from '../../contentBlock/ContentBlockContainer'
 import CompletablesContainer from '../CompletablesContainer';
+import CompletableNodes from './CompletableNodes'
 
 class CompletableContent extends Component {
 
@@ -17,11 +18,7 @@ class CompletableContent extends Component {
       <Accordion.Collapse eventKey={this.props.completable.id}>
         <Card.Body>
           <Container fluid>
-            <Row className="nodes pb-3">
-              <Col>
-                {!!this.props.completable.nodes && <CompletablesContainer localCompletables={this.props.completable.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>}
-              </Col>
-            </Row>
+            {!!this.props.completable.nodes && <CompletableNodes localCompletables={this.props.completable.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>}
             <Row className="content-blocks-row">
               <Col>
                 {!!this.props.completable.content_blocks && this.props.completable.content_blocks.map(contentBlock => <ContentBlockContainer key={contentBlock.id} contentBlock={contentBlock}/>)}
