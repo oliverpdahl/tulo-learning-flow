@@ -6,7 +6,7 @@ import CompletableNodes from './CompletableNodes'
 import CompletableContentBlocks from './CompletableContentBlocks'
 import CompletableBottomRow from './CompletableBottomRow'
 
-class CompletableContent extends Component {
+class CompletableBody extends Component {
   render(){
     return(
       <Accordion.Collapse eventKey={this.props.completable.id}>
@@ -22,4 +22,4 @@ class CompletableContent extends Component {
   }
 }
 
-export default CompletableContent
+export default CompletableBody
