@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { Col, Row, Container, Media } from 'react-bootstrap'
-import ContentBlockTextBlock from './ContentBlockTextBlock'
+import ContentBlockBody from './ContentBlockBody'
 
 class ContentBlockContainer extends Component {
   render(){
     return(
       <Media>
-        <Media.Body>
-          <ContentBlockTextBlock contentBlock={this.props.contentBlock}/>
-        </Media.Body>
+        <ContentBlockBody content={this.props.contentBlock}/>
       </Media>
     )
   }
