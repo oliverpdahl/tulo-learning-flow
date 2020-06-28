@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Col, Row, Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import CompletableCompleteButton from "./CompletableCompleteButton";
 
 class CompletableBottomRow extends Component {

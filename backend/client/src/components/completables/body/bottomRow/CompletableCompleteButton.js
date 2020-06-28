@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Button, Col, Row, Container } from "react-bootstrap";
-import CompletablesContainer from "../../CompletablesContainer";
+import { Button } from "react-bootstrap";
 
 class CompletableCompleteButton extends Component {
   handleOnClick = () => {
