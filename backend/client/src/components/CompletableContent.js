@@ -8,7 +8,8 @@ import CompletablesContainer from './CompletablesContainer';
 class CompletableContent extends Component {
 
   handleOnClick = () => {
-    this.props.toggleCompletable(this.props.completable)
+    const allC = this.props.allCompletables.find(c => c.id === this.props.completable.id)
+    this.props.toggleCompletable(allC)
   }
 
   render(){
