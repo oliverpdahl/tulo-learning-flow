@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import CompletableHeader from './header/CompletableHeader'
-import CompletableContent from './content/CompletableContent'
+import CompletableContent from './body/CompletableContent'
 import { Link } from 'react-router-dom'
 import slugify from 'slugify'
 
