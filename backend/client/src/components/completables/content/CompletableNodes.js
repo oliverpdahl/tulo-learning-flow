@@ -7,7 +7,7 @@ class CompletableNodes extends Component {
     return(
       <Row className="nodes pb-3">
         <Col>
-          <CompletablesContainer localCompletables={this.props.localCompletables} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
+          <CompletablesContainer localCompletables={this.props.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
         </Col>
       </Row>
     )
