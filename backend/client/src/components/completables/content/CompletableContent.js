@@ -3,8 +3,8 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
 import ContentBlockContainer from '../../contentBlock/ContentBlockContainer'
-import CompletablesContainer from '../CompletablesContainer';
 import CompletableNodes from './CompletableNodes'
+import CompletableContentBlocks from './CompletableContentBlocks'
 
 class CompletableContent extends Component {
 
@@ -19,11 +19,7 @@ class CompletableContent extends Component {
         <Card.Body>
           <Container fluid>
             {!!this.props.completable.nodes && <CompletableNodes localCompletables={this.props.completable.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>}
-            <Row className="content-blocks-row">
-              <Col>
-                {!!this.props.completable.content_blocks && this.props.completable.content_blocks.map(contentBlock => <ContentBlockContainer key={contentBlock.id} contentBlock={contentBlock}/>)}
-              </Col>
-            </Row>
+            {!!this.props.completable.content_blocks && <CompletableContentBlocks contentBlocks={this.props.completable.content_blocks}/>}
             <Row className="bottom-row">
               <Col xs={12} sm={8} md={9}></Col>
               <Col>
