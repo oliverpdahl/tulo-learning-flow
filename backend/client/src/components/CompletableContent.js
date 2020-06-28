@@ -3,6 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
 import ContentBlockContainer from './ContentBlockContainer'
+import CompletablesContainer from './CompletablesContainer';
 
 class CompletableContent extends Component {
 
@@ -15,9 +16,14 @@ class CompletableContent extends Component {
       <Accordion.Collapse eventKey={this.props.completable.id}>
         <Card.Body>
           <Container fluid>
+            <Row className="nodes">
+              <Col>
+                {!!this.props.completable.nodes && <CompletablesContainer completables={this.props.completable.nodes} toggleCompletable={this.props.toggleCompletable}/>}
+              </Col>
+            </Row>
             <Row className="content-blocks-row">
               <Col>
-                {this.props.completable.content_blocks.map(contentBlock => <ContentBlockContainer key={contentBlock.id} contentBlock={contentBlock}/>)}
+                {!!this.props.completable.content_blocks && this.props.completable.content_blocks.map(contentBlock => <ContentBlockContainer key={contentBlock.id} contentBlock={contentBlock}/>)}
               </Col>
             </Row>
             <Row className="bottom-row">

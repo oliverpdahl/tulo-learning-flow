@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 class CompletablesContainer extends Component {
   listCompletables = () => {
     return(
-      this.props.completables.map(completable => <CompletableCard key={completable.id} completable={completable} toggleCompletable={this.props.toggleCompletable}/>)
+      !!this.props.completables.map && this.props.completables.map(completable => <CompletableCard key={completable.id} completable={completable} toggleCompletable={this.props.toggleCompletable}/>)
     )
   }
   render(){
