@@ -1,6 +1,6 @@
 import { fetchCompletables } from './actions/fetchCompletables'
 import { fetchPaths } from './actions/fetchPaths'
-import CompletablesContainer from './components/CompletablesContainer'
+import CompletablesContainer from './components/completables/CompletablesContainer'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {

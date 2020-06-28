@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import CompletableCard from './CompletableCard';
 import { connect } from 'react-redux'
-import { toggleCompletable } from '../actions/toggleCompletable'
+import { toggleCompletable } from '../../actions/toggleCompletable'
 import {Link} from 'react-router-dom'
 
 class CompletablesContainer extends Component {
