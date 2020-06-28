@@ -5,9 +5,9 @@ import CompletablesContainer from '../CompletablesContainer'
 class CompletableNodes extends Component {
   render(){
     return(
-      <Row className="content-blocks-row">
+      <Row className="nodes pb-3">
         <Col>
-          {!!this.props.completable.content_blocks && this.props.completable.content_blocks.map(contentBlock => <ContentBlockContainer key={contentBlock.id} contentBlock={contentBlock}/>)}
+          <CompletablesContainer localCompletables={this.props.localCompletables} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
         </Col>
       </Row>
     )
