@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom'
 
 
 class CompletableTitle extends Component {
+  // isComplete = () => {
+  //   completable = 
+  // }
   render(){
     return(
       <Accordion.Toggle as={Card.Header} eventKey={this.props.completable.id} className="text-primary">

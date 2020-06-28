@@ -11,8 +11,8 @@ class CompletableCard extends Component {
       
         <Card>
         <Link to={slugify(this.props.completable.title).toLocaleLowerCase()} style={{textDecoration: 'none'}}>
-          <CompletableTitle completable={this.props.completable}/>
-          <CompletableContent completable={this.props.completable} toggleCompletable={this.props.toggleCompletable}/>
+          <CompletableTitle completable={this.props.completable} allCompletables={this.props.allCompletables} />
+          <CompletableContent completable={this.props.completable} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>
         </Link>
         </Card>
     )

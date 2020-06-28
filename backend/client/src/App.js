@@ -21,7 +21,7 @@ class App extends Component {
       return <div>Loading...</div>
     } else {
       console.log(this.props.completables)
-      return <CompletablesContainer completables={this.props.paths}/>
+      return <CompletablesContainer localCompletables={this.props.paths} allCompletables={this.props.completables}/>
     }
   }
 
