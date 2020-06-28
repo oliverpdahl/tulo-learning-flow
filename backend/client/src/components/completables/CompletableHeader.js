@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle as fasCircle } from '@fortawesome/free-solid-svg-icons'
 import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom'
+import CompletableTitle from './CompletableTitle'
 
 
 class CompletableHeader extends Component {
@@ -21,7 +22,7 @@ class CompletableHeader extends Component {
                 {this.isComplete(this.props.completable) ? <FontAwesomeIcon icon={fasCircle} /> : <FontAwesomeIcon icon={farCircle} />}
               </Col>
               <Col xs={7}>
-                {this.props.completable.title}
+                <CompletableTitle completable={this.props.completable}/>
               </Col>
             </Row>
           </Container>

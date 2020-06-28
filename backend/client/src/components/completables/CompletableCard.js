@@ -8,7 +8,6 @@ import slugify from 'slugify'
 class CompletableCard extends Component {
   render(){
     return(
-      
         <Card>
         <Link to={slugify(this.props.completable.title).toLocaleLowerCase()} style={{textDecoration: 'none'}}>
           <CompletableHeader completable={this.props.completable} allCompletables={this.props.allCompletables} />
