@@ -1,7 +1,7 @@
 class CompletablesController < ApplicationController
   def index
     completables = Completable.all
-    render json: completables
+    render json: completables.to_json(only: [:id, :complete])
   end
 
   def paths

@@ -9,16 +9,16 @@ import { Link } from 'react-router-dom'
 
 
 class CompletableTitle extends Component {
-  // isComplete = () => {
-  //   completable = 
-  // }
+  isComplete = (completable) => {
+    return this.props.allCompletables.find(c => c.id === completable.id).complete
+  }
   render(){
     return(
       <Accordion.Toggle as={Card.Header} eventKey={this.props.completable.id} className="text-primary">
           <Container fluid>
             <Row>
               <Col xs={0.5}>
-                {this.props.completable.complete ? <FontAwesomeIcon icon={fasCircle} /> : <FontAwesomeIcon icon={farCircle} />}
+                {this.isComplete(this.props.completable) ? <FontAwesomeIcon icon={fasCircle} /> : <FontAwesomeIcon icon={farCircle} />}
               </Col>
               <Col xs={7}>
                 {this.props.completable.title}

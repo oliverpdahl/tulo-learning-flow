@@ -18,7 +18,7 @@ class CompletableContent extends Component {
           <Container fluid>
             <Row className="nodes">
               <Col>
-                {!!this.props.completable.nodes && <CompletablesContainer localCompletables={this.props.completable.nodes} allCompletables={this.props.completables}toggleCompletable={this.props.toggleCompletable}/>}
+                {!!this.props.completable.nodes && <CompletablesContainer localCompletables={this.props.completable.nodes} allCompletables={this.props.allCompletables} toggleCompletable={this.props.toggleCompletable}/>}
               </Col>
             </Row>
             <Row className="content-blocks-row">
