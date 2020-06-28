@@ -17,7 +17,7 @@ class CompletableHeader extends Component {
                 <CompletableCompleteStatus completable={this.props.completable} allCompletables={this.props.allCompletables}/>
               </Col>
               <Col>
-                <CompletableTitle completable={this.props.completable}/>
+                {!!this.props.completable && <CompletableTitle completable={this.props.completable}/>}
               </Col>
             </Row>
           </Container>
