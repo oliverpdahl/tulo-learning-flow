@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
 import CompletableNodes from './CompletableNodes'
 import CompletableContentBlocks from './CompletableContentBlocks'
-import CompletableBottomRow from './CompletableBottomRow'
+import CompletableBottomRow from './bottomRow/CompletableBottomRow'
 
 class CompletableBody extends Component {
   render(){
