@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card'
 import { Button, Col, Row, Container } from 'react-bootstrap'
-import ContentBlockContainer from '../ContentBlockContainer'
+import ContentBlockContainer from '../contentBlock/ContentBlockContainer'
 import CompletablesContainer from './CompletablesContainer';
 
 class CompletableContent extends Component {

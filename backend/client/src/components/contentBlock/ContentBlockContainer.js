@@ -6,7 +6,7 @@ class ContentBlockContainer extends Component {
   render(){
     return(
       <Media>
-        <ContentBlockBody content={this.props.contentBlock}/>
+        <ContentBlockBody contentBlock={this.props.contentBlock}/>
       </Media>
     )
   }
