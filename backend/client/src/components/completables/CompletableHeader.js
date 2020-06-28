@@ -8,7 +8,7 @@ import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom'
 
 
-class CompletableTitle extends Component {
+class CompletableHeader extends Component {
   isComplete = (completable) => {
     return this.props.allCompletables.find(c => c.id === completable.id).complete
   }
@@ -30,4 +30,4 @@ class CompletableTitle extends Component {
   }
 }
 
-export default CompletableTitle
+export default CompletableHeader
