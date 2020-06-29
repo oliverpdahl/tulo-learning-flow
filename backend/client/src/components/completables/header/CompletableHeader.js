@@ -13,12 +13,10 @@ class CompletableHeader extends Component {
       >
         <Container fluid>
           <Row>
-            <Col xs={0.5}>
-              <CompletableCompleteStatus
-                completable={this.props.completable}
-                allCompletables={this.props.allCompletables}
-              />
-            </Col>
+            <CompletableCompleteStatus
+              completable={this.props.completable}
+              allCompletables={this.props.allCompletables}
+            />
             <CompletableTitle completable={this.props.completable} />
           </Row>
         </Container>
