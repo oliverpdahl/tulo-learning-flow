@@ -34,7 +34,7 @@ class App extends Component {
             <Col xs={0.5} className="fill">
               <NavBarContainer />
             </Col>
-            <Col>
+            <Col className="p-0">
               <Link to="/paths/" style={{ textDecoration: "none" }}>
                 {this.handleLoading()}
               </Link>
