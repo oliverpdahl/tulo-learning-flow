@@ -35,7 +35,7 @@ class CompletableCompleteButton extends Component {
         disabled={this.disabled()}
         block
       >
-        Complete
+        Mark Complete
       </Button>
     );
   }
