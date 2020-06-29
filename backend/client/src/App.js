@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Link to="/paths" style={{ textDecoration: "none" }}>
+        <Link to="/paths/" style={{ textDecoration: "none" }}>
           {this.handleLoading()}
         </Link>
       </Router>

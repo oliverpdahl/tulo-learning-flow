@@ -17,6 +17,7 @@ class CompletableCard extends Component {
       <Card>
         <Link
           to={slugify(this.props.completable.title).toLocaleLowerCase()}
+          exact
           style={{ textDecoration: "none" }}
         >
           <CompletableHeader
