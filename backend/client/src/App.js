@@ -29,10 +29,18 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <NavBarContainer />
-        <Link to="/paths/" style={{ textDecoration: "none" }}>
-          {this.handleLoading()}
-        </Link>
+        <Container fluid>
+          <Row>
+            <Col xs={0.5} className="bg-primary">
+              <NavBarContainer />
+            </Col>
+            <Col>
+              <Link to="/paths/" style={{ textDecoration: "none" }}>
+                {this.handleLoading()}
+              </Link>
+            </Col>
+          </Row>
+        </Container>
       </Router>
     );
   }
