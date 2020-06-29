@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Card, Accordion } from "react-bootstrap";
 import CompletableTitle from "./CompletableTitle";
 import CompletableCompleteStatus from "./CompletableCompleteStatus";
+import CompletableProgressBar from "./CompletableProgressBar";
 
 class CompletableHeader extends Component {
   render() {
@@ -18,6 +19,7 @@ class CompletableHeader extends Component {
               allCompletables={this.props.allCompletables}
             />
             <CompletableTitle completable={this.props.completable} />
+            <CompletableProgressBar />
           </Row>
         </Container>
       </Accordion.Toggle>

@@ -1,9 +1,13 @@
-import { Component } from "react";
-import { ProgressBar } from "react-bootstrap";
+import React, { Component } from "react";
+import { ProgressBar, Col } from "react-bootstrap";
 
 class CompletableProgressBar extends Component {
   render() {
-    return <ProgressBar now={69} />;
+    return (
+      <Col>
+        <ProgressBar now={69} />
+      </Col>
+    );
   }
 }
 
