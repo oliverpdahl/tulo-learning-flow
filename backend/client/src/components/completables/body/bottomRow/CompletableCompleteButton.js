@@ -9,9 +9,32 @@ class CompletableCompleteButton extends Component {
     this.props.toggleCompletable(allC);
   };
 
+  allNodeComplete = () => {
+    if (!!this.props.completable.nodes && !!this.props.completable.nodes[0]) {
+      return (
+        !!this.props.completeNodes(this.props.completable) &&
+        !(
+          this.props.completeNodes(this.props.completable).length ===
+          this.props.completable.nodes.length
+        )
+      );
+    }
+  };
+
+  disabled = () => {
+    return this.allNodeComplete()
+      ? !this.props.isComplete(this.props.completable)
+      : false;
+  };
+
   render() {
     return (
-      <Button variant="primary" onClick={this.handleOnClick} block>
+      <Button
+        variant="primary"
+        onClick={this.handleOnClick}
+        disabled={this.disabled()}
+        block
+      >
         Complete
       </Button>
     );

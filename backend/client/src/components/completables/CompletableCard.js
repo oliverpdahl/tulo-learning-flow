@@ -29,7 +29,8 @@ class CompletableCard extends Component {
             completable={this.props.completable}
             allCompletables={this.props.allCompletables}
             toggleCompletable={this.props.toggleCompletable}
-            isComplete={this.isComplete}
+            completeNodes={this.completeNodes}
+            isComplete={this.props.isComplete}
           />
         </Link>
       </Card>

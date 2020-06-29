@@ -12,6 +12,8 @@ class CompletableBottomRow extends Component {
             completable={this.props.completable}
             allCompletables={this.props.allCompletables}
             toggleCompletable={this.props.toggleCompletable}
+            completeNodes={this.props.completeNodes}
+            isComplete={this.props.isComplete}
           />
         </Col>
       </Row>
