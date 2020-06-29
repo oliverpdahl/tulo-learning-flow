@@ -30,8 +30,8 @@ class App extends Component {
     return (
       <Router>
         <Container fluid>
-          <Row className="h-100">
-            <Col xs={0.5} className="bg-primary">
+          <Row className="fill">
+            <Col xs={0.5} className="fill">
               <NavBarContainer />
             </Col>
             <Col>

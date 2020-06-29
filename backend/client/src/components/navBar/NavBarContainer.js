@@ -9,20 +9,20 @@ import {
 class NavBarContainer extends Component {
   render() {
     return (
-      <div className="sideBar">
+      <div className="sideBar bg-primary fill">
         <br />
-        <h3 className="text-light text-center font-weight-bold">
+        <h2 className="text-light text-center font-weight-bold">
           T<br />U<br />L<br />O
-        </h3>
+        </h2>
         <Nav defaultActiveKey="/home" className="flex-column text-light">
           <Nav.Link className="text-light" href="/home">
             Active
           </Nav.Link>
           <Nav.Link className="text-light text-center" eventKey="link-1">
-            <FontAwesomeIcon icon={user} size="lg" />
+            <FontAwesomeIcon icon={user} size="xl" />
           </Nav.Link>
           <Nav.Link eventKey="link-2" className="text-light text-center">
-            <FontAwesomeIcon icon={help} size="lg" />
+            <FontAwesomeIcon icon={help} size="xl" />
           </Nav.Link>
         </Nav>
       </div>

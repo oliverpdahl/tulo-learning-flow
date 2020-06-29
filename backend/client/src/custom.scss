@@ -1,6 +1,10 @@
 // Override default variables before the import
 $theme-colors: (
-  "primary": teal
+  "primary": teal,
 );
+
+.fill {
+  min-height: 100vh;
+}
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
