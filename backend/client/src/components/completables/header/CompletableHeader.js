@@ -20,7 +20,10 @@ class CompletableHeader extends Component {
               isComplete={this.props.isComplete}
             />
             <CompletableTitle completable={this.props.completable} />
-            <CompletableProgressBar />
+            <CompletableProgressBar
+              completable={this.props.completable}
+              completeNodes={this.props.completeNodes}
+            />
           </Row>
         </Container>
       </Accordion.Toggle>

@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 import slugify from "slugify";
 
 class CompletableCard extends Component {
+  completeNodes = (completable) => {
+    if (!!completable.nodes && !!completable.nodes[0]) {
+      return completable.nodes.filter((n) => n.isComplete === true);
+    }
+  };
+
   render() {
     return (
       <Card>
@@ -17,6 +23,7 @@ class CompletableCard extends Component {
             completable={this.props.completable}
             allCompletables={this.props.allCompletables}
             isComplete={this.props.isComplete}
+            completeNodes={this.completeNodes}
           />
           <CompletableBody
             completable={this.props.completable}
