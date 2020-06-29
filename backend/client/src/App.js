@@ -4,6 +4,8 @@ import CompletablesContainer from "./components/completables/CompletablesContain
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import NavBarContainer from "./components/navBar/NavBarContainer";
+import { Container, Row, Col } from "react-bootstrap";
 
 class App extends Component {
   componentDidMount() {
@@ -27,6 +29,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <NavBarContainer />
         <Link to="/paths/" style={{ textDecoration: "none" }}>
           {this.handleLoading()}
         </Link>
