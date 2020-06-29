@@ -8,7 +8,7 @@ import slugify from "slugify";
 class CompletableCard extends Component {
   completeNodes = (completable) => {
     if (!!completable.nodes && !!completable.nodes[0]) {
-      return completable.nodes.filter((n) => n.isComplete === true);
+      return completable.nodes.filter((n) => this.props.isComplete(n) === true);
     }
   };
 
