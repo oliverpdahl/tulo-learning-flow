@@ -4,16 +4,11 @@ import { faCircle as fasCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCircle as farCircle } from "@fortawesome/free-regular-svg-icons";
 import { Col } from "react-bootstrap";
 
-class CompletableTitle extends Component {
-  isComplete = (completable) => {
-    return this.props.allCompletables.find((c) => c.id === completable.id)
-      .complete;
-  };
-
+class CompletableCompleteStatus extends Component {
   render() {
     return (
       <Col xs={0.5}>
-        {this.isComplete(this.props.completable) ? (
+        {this.props.isComplete(this.props.completable) ? (
           <FontAwesomeIcon icon={fasCircle} />
         ) : (
           <FontAwesomeIcon icon={farCircle} />
@@ -23,4 +18,4 @@ class CompletableTitle extends Component {
   }
 }
 
-export default CompletableTitle;
+export default CompletableCompleteStatus;

@@ -17,6 +17,7 @@ class CompletableHeader extends Component {
             <CompletableCompleteStatus
               completable={this.props.completable}
               allCompletables={this.props.allCompletables}
+              isComplete={this.props.isComplete}
             />
             <CompletableTitle completable={this.props.completable} />
             <CompletableProgressBar />

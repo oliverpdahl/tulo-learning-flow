@@ -14,10 +14,17 @@ class CompletablesContainer extends Component {
           completable={completable}
           allCompletables={this.props.allCompletables}
           toggleCompletable={this.props.toggleCompletable}
+          isComplete={this.isComplete}
         />
       ))
     );
   };
+
+  isComplete = (completable) => {
+    return this.props.allCompletables.find((c) => c.id === completable.id)
+      .complete;
+  };
+
   render() {
     return (
       <Accordion defaultActiveKey="0">{this.listCompletables()}</Accordion>

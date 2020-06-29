@@ -16,11 +16,13 @@ class CompletableCard extends Component {
           <CompletableHeader
             completable={this.props.completable}
             allCompletables={this.props.allCompletables}
+            isComplete={this.props.isComplete}
           />
           <CompletableBody
             completable={this.props.completable}
             allCompletables={this.props.allCompletables}
             toggleCompletable={this.props.toggleCompletable}
+            isComplete={this.isComplete}
           />
         </Link>
       </Card>
