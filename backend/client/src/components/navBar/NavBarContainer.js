@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import { Nav } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faQuestionCircle as help,
+  faUserAstronaut as user,
+} from "@fortawesome/free-solid-svg-icons";
 
 class NavBarContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="sideBar">
         <br />
-        <h3 className="text-light text-center">Tulo</h3>
-        <Nav defaultActiveKey="/home" className="flex-sm-column text-light">
+        <h3 className="text-light text-center font-weight-bold">
+          T<br />U<br />L<br />O
+        </h3>
+        <Nav defaultActiveKey="/home" className="flex-column text-light">
           <Nav.Link className="text-light" href="/home">
             Active
           </Nav.Link>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
+          <Nav.Link className="text-light text-center" eventKey="link-1">
+            <FontAwesomeIcon icon={user} size="lg" />
+          </Nav.Link>
+          <Nav.Link eventKey="link-2" className="text-light text-center">
+            <FontAwesomeIcon icon={help} size="lg" />
           </Nav.Link>
         </Nav>
       </div>
