@@ -6,6 +6,7 @@ import {
   faUserAstronaut as user,
   faMeteor as path,
 } from "@fortawesome/free-solid-svg-icons";
+import NavBarLink from "./NavBarLink";
 
 class NavBarContainer extends Component {
   render() {
@@ -19,9 +20,7 @@ class NavBarContainer extends Component {
           <Nav.Link className="text-light" href="/home">
             <FontAwesomeIcon icon={path} size="2x" />
           </Nav.Link>
-          <Nav.Link className="text-light text-center" eventKey="link-1">
-            <FontAwesomeIcon icon={user} size="2x" />
-          </Nav.Link>
+          <NavBarLink icon={user} link={"/user"} />
           <Nav.Link eventKey="link-2" className="text-light text-center">
             <FontAwesomeIcon icon={help} size="2x" />
           </Nav.Link>
