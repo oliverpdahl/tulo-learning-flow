@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Col } from "react-bootstrap";
 
-class ContentBlockSource extends Component {
+class Source extends Component {
   render() {
     return (
       <footer class="blockquote-footer">
@@ -12,4 +12,4 @@ class ContentBlockSource extends Component {
   }
 }
 
-export default ContentBlockSource;
+export default Source;
