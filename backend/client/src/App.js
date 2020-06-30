@@ -29,6 +29,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props.paths);
     return (
       <Router>
         <Container fluid>
@@ -37,7 +38,7 @@ class App extends Component {
               <NavBarContainer />
             </Col>
             <Col className="p-0">
-              <Route path="/paths" render={() => this.handleLoading()} />
+              <Route path="/" render={() => this.handleLoading()} />
               <Route path="/about" component={AboutContainer} />
               <Route path="/user" component={UserContainer} />
             </Col>
