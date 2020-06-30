@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import { Media } from "react-bootstrap";
 
 class CompletableTitle extends Component {
   render() {
-    return <h1>Passage</h1>;
+    return(
+      <Me
+    )
   }
 }
 

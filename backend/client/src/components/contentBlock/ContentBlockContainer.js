@@ -4,11 +4,7 @@ import ContentBlockBody from "./ContentBlockBody";
 
 class ContentBlockContainer extends Component {
   render() {
-    return (
-      <Media>
-        <ContentBlockBody contentBlock={this.props.contentBlock} />
-      </Media>
-    );
+    return <ContentBlockBody contentBlock={this.props.contentBlock} />;
   }
 }
 
