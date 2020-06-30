@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Media } from "react-bootstrap";
 
-class CompletableTitle extends Component {
+class Passage extends Component {
   render() {
-    return(
-      <Me
-    )
+    return (
+      <Media>
+        <Media left>
+          <Media object href={this.props.link} />
+        </Media>
+      </Media>
+    );
   }
 }
 
-export default CompletableTitle;
+export default Passage;
