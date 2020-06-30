@@ -10,7 +10,7 @@ class CompletablesContainer extends Component {
       !!this.props.localCompletables.map &&
       this.props.localCompletables.map((completable) => (
         <CompletableCard
-          key={completable.id}
+          eventKey={completable.id}
           completable={completable}
           allCompletables={this.props.allCompletables}
           toggleCompletable={this.props.toggleCompletable}
@@ -26,9 +26,7 @@ class CompletablesContainer extends Component {
   };
 
   render() {
-    return (
-      <Accordion defaultActiveKey="0">{this.listCompletables()}</Accordion>
-    );
+    return <Accordion>{this.listCompletables()}</Accordion>;
   }
 }
 
