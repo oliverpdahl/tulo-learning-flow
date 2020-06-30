@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import completablesReducer from "./completablesReducer.js";
 import "./custom.scss";
+@import "~video-react/styles/scss/video-react"; // or import scss
 
 const store = createStore(completablesReducer, applyMiddleware(thunk));
 
