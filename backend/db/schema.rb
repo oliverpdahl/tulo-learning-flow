@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 2020_06_30_135736) do
     t.string "resource"
     t.string "type"
     t.string "link"
+    t.string "img_link"
+    t.string "img_creator"
+    t.string "img_resource"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
