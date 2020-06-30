@@ -3,7 +3,6 @@ import { Media } from "react-bootstrap";
 import ContentBlockTextBlock from "./ContentBlockTextBlock";
 import Passage from "../content/Passage";
 import Source from "../content/Source";
-import { Player } from "video-react";
 
 class ContentBlockBody extends Component {
   listContent = () => {
