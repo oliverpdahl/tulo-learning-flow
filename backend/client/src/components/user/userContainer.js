@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Container, Row, Form } from "react-bootstrap";
+import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
 class UserContainer extends Component {
   render() {
@@ -20,6 +20,16 @@ class UserContainer extends Component {
                     Please enter your @evace.org email
                   </Form.Text>
                 </Form.Group>
+                <Form.Group controlId="password">
+                  <Form.Control
+                    size="lg"
+                    type="password"
+                    placeholder="Enter password"
+                  />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Log In
+                </Button>
               </Form>
             </Col>
           </Row>
