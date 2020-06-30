@@ -4,6 +4,7 @@ import ContentBlockTextBlock from "./ContentBlockTextBlock";
 import Passage from "../content/Passage";
 import Source from "../content/Source";
 import { Player } from "video-react";
+import Video from "../content/Video";
 
 class ContentBlockBody extends Component {
   listContent = () => {
@@ -24,15 +25,11 @@ class ContentBlockBody extends Component {
             );
           case "Video":
             return (
-              <Row>
-                <Col>
-                  <Player playsInline src={content.link} />
-                  <Source
-                    creator={content.creator}
-                    resource={content.resource}
-                  />
-                </Col>
-              </Row>
+              <Video
+                creator={content.creator}
+                resource={content.resource}
+                link={content.link}
+              />
             );
         }
       })
