@@ -11,7 +11,16 @@ class ContentBlockBody extends Component {
       this.props.contentBlock.contents.map((content) => {
         switch (content.type) {
           case "Passage":
-            return <Passage />;
+            return (
+              <Passage
+                img_link={content.img_link}
+                img_creator={content.img_creator}
+                img_resource={content.img_resource}
+                text={content.text}
+                creator={content.creator}
+                resource={content.resource}
+              />
+            );
         }
       })
     );
