@@ -35,7 +35,8 @@ class CompletableCompleteButton extends Component {
         disabled={this.disabled()}
         block
       >
-        Mark Complete
+        {this.props.isComplete(this.props.completable) ? "Unmark" : "Mark"}{" "}
+        Complete
       </Button>
     );
   }
