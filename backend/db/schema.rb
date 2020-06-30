@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_140852) do
+ActiveRecord::Schema.define(version: 2020_06_30_135736) do
 
   create_table "completables", force: :cascade do |t|
     t.string "title"
@@ -22,8 +22,18 @@ ActiveRecord::Schema.define(version: 2020_06_26_140852) do
   end
 
   create_table "content_blocks", force: :cascade do |t|
-    t.string "text"
     t.integer "completable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "text"
+    t.integer "content_block_id"
+    t.string "creator"
+    t.string "resource"
+    t.string "type"
+    t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
