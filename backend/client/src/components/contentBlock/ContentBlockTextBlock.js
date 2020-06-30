@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ContentBlockSource from "../content/ContentBlockSource";
+import ContentBlockSource from "../content/Source";
 
 class ContentBlockTextBlock extends Component {
   render() {
