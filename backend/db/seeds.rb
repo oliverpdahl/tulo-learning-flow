@@ -7,6 +7,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+## KICKFLIP
 kf = Path.create(title: 'Learn to Kickflip')
 kf_content = kf.content_blocks.create
 kf_content.contents.create(
@@ -26,6 +28,8 @@ kf_content.contents.create(
   resource: 'Braille Skateboarding',
   type: 'Video'
 )
+
+# OLLIE
 ollie = kf.nodes.create(title: 'Learn to Ollie', complete: true)
 ollie_content = ollie.content_blocks.create
 ollie_content.contents.create(
@@ -39,13 +43,58 @@ ollie_content.contents.create(
   type: 'Passage'
 )
 ollie_content.contents.create(
-  link: 'https://cdn.jwplayer.com/videos/L4prgIC5-qP58AAan.mp4',
-  creator: 'Nate Cohen',
-  resource: 'HowCast',
+  link: 'https://www.youtube.com/watch?v=arDVW-aWWys',
+  resource: 'VLSkate',
   type: 'Video'
 )
-fssi = kf.nodes.create(title: 'Learn to Front Side Shove It')
+
+# FRONTSIDE SHOVE-IT
+fssi = kf.nodes.create(title: 'Learn to Frontside Shove It')
+fssi_content = fssi.content_blocks.create
+fssi_content.contents.create(
+  link: 'https://youtu.be/rbpllQ2bGAE',
+  resource: 'Braille Skateboarding',
+  type: 'Video'
+)
+fssi_content.contents.create(
+  text: %(The Frontside Pop Shove It is achieved by combining an Ollie and a quick forward-scoop motion of the back-foot to make the board spin 180 degrees, all while remaining neutral in the air.
+For the first practice step, you won’t be standing on the board. Stand with your board in front of you and simply place your back foot on the tail, in the proper Frontside Pop Shove It back foot position. With your back foot in the proper position and your front foot standing on solid ground, practice popping straight down.
+Give the board a slight nudge forward as you pop it down with your back foot. When done properly, this will cause the board to turn 180-degrees as it would for the Frontside Pop Shove It. You’re not moving, only the board is doing the Front Shove motion.
+It’s important to keep the board flat when doing this practice step. This will prevent you from landing primo or having the board flip when you start landing Frontside Pop Shove Its. Play around with the foot position, the downwards pop, and the forward nudge of the back foot until your board is consistently staying flat and doing the full frontside 180-degree rotation.
+  ),
+  img_link: 'https://foatc2b41sq2v8h3f3enj931-wpengine.netdna-ssl.com/wp-content/uploads/2019/08/fs-pop-shove-foot-position1.png',
+  img_creator: '',
+  img_resource: 'Braille Skateboarding',
+  link: 'https://brailleskateboarding.com/how-to-frontside-pop-shove-it/',
+  creator: '',
+  resource: 'Braille Skateboarding',
+  type: 'Passage'
+)
+fssi_content.contents.create(
+  text: %{A Shove-it (or shuvit) is a skateboarding trick where the skateboarder makes the board spin 180 degrees (or more) without the tail of the board hitting the ground under their feet. There are many variations of the shove-it but they all follow the same principle: The skateboarder's lead foot remains in one spot, while the back foot performs the "shove". The pop shove-it was originally called a "Ty hop", named after Ty Page.},
+  img_link: 'https://www.wikihow.com/images/thumb/b/b3/Switch-Frontside-Shove-It-Step-1.jpg/v4-460px-Switch-Frontside-Shove-It-Step-1.jpg.webp',
+  img_creator: '',
+  img_resource: 'wikiHow',
+  link: 'https://en.wikipedia.org/wiki/Shove-it',
+  creator: '',
+  resource: 'Wikipedia',
+  type: 'Passage'
+)
+
+# HEELFLIP
 hf = kf.nodes.create(title: 'Learn to Heelflip')
+hf_content = hf.content_blocks.create
+hf_content.contents.create(
+  link: 'https://www.youtube.com/watch?v=TqJTxROm7rg',
+  creator: 'Spencer Nuzzi',
+  resource: 'RIDE',
+  type: 'Video'
+)
+hf_content.contents.create(
+  link: 'https://www.youtube.com/watch?v=Skl58iiJXqQ',
+  creator: 'Jonny Giger',
+  type: 'Video'
+)
 
 Path.create(title: 'Learn Excell')
 Path.create(complete: true, title: 'Learn Compound Fractions')
