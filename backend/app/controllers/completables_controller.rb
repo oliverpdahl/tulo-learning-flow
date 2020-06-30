@@ -8,7 +8,7 @@ class CompletablesController < ApplicationController
 
   def paths
     paths = Path.all
-    render json: paths.to_json(include: [:content_blocks, nodes: {
+    render json: paths.to_json(include: [content_blocks: { include: :contents }, nodes: {
                                  include: :content_blocks,
                                  except: :complete
                                }], except: :complete)

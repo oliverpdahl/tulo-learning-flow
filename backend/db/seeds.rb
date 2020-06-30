@@ -8,6 +8,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 kf = Path.create(title: 'Learn to Kickflip')
+kf_content = kf.content_blocks.create
+kf_content.contents.create(text: %{The ollie (invented by Alan "Ollie" Gelfand in 1977) is the first trick that most skateboarders learn. It's a leap into the air on the skateboard with the skater's feet still on the board, even in mid-air. The ollie is a great technique for jumping over obstacles and impressing friends even as you're still learning the basics. Learning to ollie makes sense, as the ollie is the foundation of almost all flatland and park skateboarding tricks. Once you learn how to ollie, you’ll be able to move on to learning all kinds of other skateboarding tricks or inventing your own.},
+                           link: 'https://www.liveabout.com/thmb/WgWcAwnniC0GklU8FBzBGCcvJ3w=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-641276018-591dc0935f9b58f4c04a8452.jpg',
+                           creator: 'Steve Cave',
+                           resource: 'liveabout',
+                           type: 'Passage')
 fssi = kf.nodes.create(title: 'Learn to Front Side Shove It')
 hf = kf.nodes.create(title: 'Learn to Heelflip')
 ollie = kf.nodes.create(title: 'Learn to Ollie', complete: true)
