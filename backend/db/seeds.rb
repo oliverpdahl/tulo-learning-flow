@@ -1,12 +1,35 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# #Compound Fractions
+cf = Path.create(complete: true, title: 'Learn Compound Fractions')
+
+# DEFINITION
+defin = cf.nodes.create(title: 'Definition', complete: true)
+defin_content = defin.content_blocks.create
+defin_content.contents.create(
+  text: %(A compound fraction is a fraction of a fraction, or any number of fractions connected with the word of corresponding to multiplication of fractions. To reduce a compound fraction to a simple fraction, just carry out the multiplication),
+  img_link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cake_quarters.svg/440px-Cake_quarters.svg.png',
+  img_resource: 'Wikipedia',
+  link: %(https://en.wikipedia.org/wiki/Fraction#'Complex'_and_'compound'_fractions'),
+  resource: 'Wikipedia',
+  type: 'Passage'
+)
+defin_content.contents.create(
+  text: %(Compound Fraction is also referred as mixed fraction. In compound fraction, part of numerator or denominator contains fraction or both formed of fractional expressions. It is also called as fractions of fractions, corresponding to multiplication of fractions.),
+  link: %(https://www.easycalculation.com/maths-dictionary/compound_fraction.html),
+  resource: 'EasyCalculation.com',
+  type: 'Passage'
+)
+
+# MULTIPLY
+mult = cf.nodes.create(title: 'Multiply', complete: true)
+mult_content = mult.content_blocks.create
+mult_content.contents.create(
+  link: %(https://youtu.be/RPhaidW0dmY),
+  creator: 'Sal Khan',
+  resource: 'Khan Academy',
+  type: 'Video'
+)
 
 ## KICKFLIP
 kf = Path.create(title: 'Learn to Kickflip')
@@ -125,6 +148,3 @@ shortcuts_content.contents.create(
   resource: 'Mister Teeser',
   type: 'Video'
 )
-
-# #Compound Fractions
-Path.create(complete: true, title: 'Learn Compound Fractions')
