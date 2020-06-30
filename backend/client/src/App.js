@@ -3,7 +3,7 @@ import { fetchPaths } from "./actions/fetchPaths";
 import CompletablesContainer from "./components/completables/CompletablesContainer";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import NavBarContainer from "./components/navBar/NavBarContainer";
 import { Container, Row, Col } from "react-bootstrap";
 import AboutContainer from "./components/about/AboutContainer";
@@ -37,7 +37,7 @@ class App extends Component {
               <NavBarContainer />
             </Col>
             <Col className="p-0">
-              <Route path="/" render={() => this.handleLoading()} />
+              <Route path="/paths" exact render={() => this.handleLoading()} />
               <Route path="/about" component={AboutContainer} />
               <Route path="/user" component={UserContainer} />
             </Col>
