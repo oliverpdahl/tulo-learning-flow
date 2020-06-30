@@ -37,7 +37,7 @@ class App extends Component {
               <NavBarContainer />
             </Col>
             <Col className="p-0">
-              <Route path="/paths" exact render={() => this.handleLoading()} />
+              <Route path="/paths" render={() => this.handleLoading()} />
               <Route path="/about" component={AboutContainer} />
               <Route path="/user" component={UserContainer} />
             </Col>
