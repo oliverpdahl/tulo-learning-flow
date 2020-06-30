@@ -9,6 +9,9 @@ class CreateContents < ActiveRecord::Migration[6.0]
       t.string :resource
       t.string :type
       t.string :link
+      t.string :img_link
+      t.string :img_creator
+      t.string :img_resource
 
       t.timestamps
     end

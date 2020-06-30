@@ -9,12 +9,12 @@ class CompletablesController < ApplicationController
   def paths
     paths = Path.all
     render json: paths.to_json(include: [content_blocks: { include: [contents: {
-                                 only: %i[type id text link creator resource content_block_id]
+                                 only: %i[type id text link creator resource content_block_id img_link img_creator img_resource]
                                }] },
                                          nodes: {
                                            include: [content_blocks: {
                                              include: [contents: {
-                                               only: %i[type id text link creator resource content_block_id]
+                                               only: %i[type id text link creator resource content_block_id img_link img_creator img_resource]
                                              }]
                                            }],
                                            except: :complete
