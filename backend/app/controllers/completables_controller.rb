@@ -8,10 +8,17 @@ class CompletablesController < ApplicationController
 
   def paths
     paths = Path.all
-    render json: paths.to_json(include: [content_blocks: { include: :contents }, nodes: {
-                                 include: :content_blocks,
-                                 except: :complete
-                               }], except: :complete)
+    render json: paths.to_json(include: [content_blocks: { include: [contents: {
+                                 only: %i[type id text link creator resource content_block_id]
+                               }] },
+                                         nodes: {
+                                           include: [content_blocks: {
+                                             include: [contents: {
+                                               only: %i[type id text link creator resource content_block_id]
+                                             }]
+                                           }],
+                                           except: :complete
+                                         }], except: :complete)
   end
 
   def toggle_complete

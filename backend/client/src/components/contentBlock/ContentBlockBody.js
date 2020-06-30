@@ -7,6 +7,7 @@ class ContentBlockBody extends Component {
   listContent = () => {
     !!this.props.contentBlock.contents &&
       this.props.contentBlock.contents.map((content) => {
+        console.log(content);
         switch (content.type) {
           case "Passage":
             return <Passage />;
