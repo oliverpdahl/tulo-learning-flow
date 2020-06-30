@@ -16,7 +16,7 @@ class Passage extends Component {
           </Col>
         )}
         {!!this.props.text && (
-          <Col className="text">
+          <Col className="text text-dark">
             <p>{this.props.text}</p>
             <Source
               creator={this.props.creator}
