@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Media } from "react-bootstrap";
 import ContentBlockTextBlock from "./ContentBlockTextBlock";
 import Passage from "../content/Passage";
-import Source from "./ContentBlockSource";
+import Source from "../content/ContentBlockSource";
 
 class ContentBlockBody extends Component {
   listContent = () => {
