@@ -9,12 +9,14 @@ class Passage extends Component {
       <Row>
         {!!this.props.link && (
           <Col>
-            <ReactPlayer
-              playsinline
-              width="100%"
-              height="auto"
-              url={this.props.link}
-            />
+            <div className="player-wrapper">
+              <ReactPlayer
+                className="react-player"
+                url={this.props.link}
+                width="100%"
+                height="100%"
+              />
+            </div>
             <Source
               creator={this.props.creator}
               resource={this.props.resource}
