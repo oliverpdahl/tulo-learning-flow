@@ -11,7 +11,7 @@ class AboutContainer extends Component {
             <Col className="pt-3">
               <h1>About</h1>
               <p>Watch this video to learn more about how to use this app</p>
-              <Video link={"https://youtu.be/yLz9ZZtLaH8"} />
+              <Video link={"https://youtu.be/QtSCp-smFpQ"} />
             </Col>
           </Row>
         </Container>
