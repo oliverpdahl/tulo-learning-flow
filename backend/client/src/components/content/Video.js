@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import Source from "./Source";
-import { Player } from "video-react";
+import ReactPlayer from "react-player";
 
 class Passage extends Component {
   render() {
@@ -9,7 +9,12 @@ class Passage extends Component {
       <Row>
         {!!this.props.link && (
           <Col>
-            <Player playsInline src={this.props.link} />
+            <ReactPlayer
+              playsinline
+              width="100%"
+              height="auto"
+              url={this.props.link}
+            />
             <Source
               creator={this.props.creator}
               resource={this.props.resource}
