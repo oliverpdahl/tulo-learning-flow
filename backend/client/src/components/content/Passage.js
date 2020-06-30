@@ -7,7 +7,7 @@ class Passage extends Component {
     return (
       <Row>
         {!!this.props.img_link && (
-          <Col xs={12} lg={4} className="image">
+          <Col xs={12} sm={6} md={4} className="image">
             <Image src={this.props.img_link} fluid />
             <Source
               creator={this.props.img_creator}
