@@ -96,5 +96,35 @@ hf_content.contents.create(
   type: 'Video'
 )
 
-Path.create(title: 'Learn Excell')
+## EXCEL
+excel = Path.create(title: 'Learn Excel')
+
+# FORMULAS AND FUNCTIONS
+ff = excel.nodes.create(title: 'Formulas and Functions')
+ff_content = ff.content_blocks.create
+ff_content.contents.create(
+  link: 'https://www.youtube.com/watch?v=Jl0Qk63z2ZY',
+  creator: 'Kevin Stratvert',
+  type: 'Video'
+)
+
+# SYNTAX
+syntax = excel.nodes.create(title: 'Syntax')
+syntax_content = syntax.content_blocks.create
+syntax_content.contents.create(
+  link: 'https://vimeo.com/87690865',
+  resource: 'CUBoulderComputing',
+  type: 'Video'
+)
+
+# SHORTCUTS
+shortcuts = excel.nodes.create(title: 'Shortcuts')
+shortcuts_content = shortcuts.content_blocks.create
+shortcuts_content.contents.create(
+  link: 'https://dai.ly/x5htfm4',
+  resource: 'Mister Teeser',
+  type: 'Video'
+)
+
+# #Compound Fractions
 Path.create(complete: true, title: 'Learn Compound Fractions')
