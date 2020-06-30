@@ -16,7 +16,9 @@ class CompletableCard extends Component {
     return (
       <Card>
         <Link
-          to={slugify(this.props.completable.title).toLocaleLowerCase()}
+          to={`/paths/${slugify(
+            this.props.completable.title
+          ).toLocaleLowerCase()}`}
           exact
           style={{ textDecoration: "none" }}
         >
