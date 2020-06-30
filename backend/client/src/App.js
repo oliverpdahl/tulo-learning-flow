@@ -3,7 +3,12 @@ import { fetchPaths } from "./actions/fetchPaths";
 import CompletablesContainer from "./components/completables/CompletablesContainer";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import NavBarContainer from "./components/navBar/NavBarContainer";
 import { Container, Row, Col } from "react-bootstrap";
 import AboutContainer from "./components/about/AboutContainer";
@@ -37,11 +42,10 @@ class App extends Component {
             <Col xs={0.5} className="fill">
               <NavBarContainer />
             </Col>
-            <Col className="p-0">
-              <Route path="/" render={() => this.handleLoading()} />
-              <Route path="/about" component={AboutContainer} />
-              <Route path="/user" component={UserContainer} />
-            </Col>
+            <Route exact path="/" render={() => <Redirect to="/paths" />} />
+            <Route path="/paths" render={() => this.handleLoading()} />
+            <Route path="/about" component={AboutContainer} />
+            <Route path="/user" component={UserContainer} />
           </Row>
         </Container>
       </Router>

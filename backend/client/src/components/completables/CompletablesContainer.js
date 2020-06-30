@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
+import { Accordion, Col } from "react-bootstrap";
 import CompletableCard from "./CompletableCard";
 import { connect } from "react-redux";
 import { toggleCompletable } from "../../actions/toggleCompletable";
@@ -26,7 +26,11 @@ class CompletablesContainer extends Component {
   };
 
   render() {
-    return <Accordion>{this.listCompletables()}</Accordion>;
+    return (
+      <Col className="p-0">
+        <Accordion>{this.listCompletables()}</Accordion>
+      </Col>
+    );
   }
 }
 
