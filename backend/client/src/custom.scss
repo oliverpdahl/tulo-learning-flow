@@ -11,11 +11,5 @@ a {
   min-height: 100vh;
 }
 
-.text {
-  &:hover {
-    color: inherit;
-  }
-}
-
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
