@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Media } from "react-bootstrap";
+import { Media, Row, Col } from "react-bootstrap";
 import ContentBlockTextBlock from "./ContentBlockTextBlock";
 import Passage from "../content/Passage";
 import Source from "../content/Source";
+import { Player } from "video-react";
 
 class ContentBlockBody extends Component {
   listContent = () => {
@@ -20,6 +21,18 @@ class ContentBlockBody extends Component {
                 creator={content.creator}
                 resource={content.resource}
               />
+            );
+          case "Video":
+            return (
+              <Row>
+                <Col>
+                  <Player playsInline src={content.link} />
+                  <Source
+                    creator={content.creator}
+                    resource={content.resource}
+                  />
+                </Col>
+              </Row>
             );
         }
       })
