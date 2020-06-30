@@ -3,7 +3,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import Source from "./Source";
 import ReactPlayer from "react-player";
 
-class Passage extends Component {
+class Video extends Component {
   render() {
     return (
       <Row>
@@ -28,4 +28,4 @@ class Passage extends Component {
   }
 }
 
-export default Passage;
+export default Video;
