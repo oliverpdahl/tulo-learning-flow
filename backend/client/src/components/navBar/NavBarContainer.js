@@ -14,7 +14,7 @@ class NavBarContainer extends Component {
       <div className="sideBar bg-primary fill pt-1 sticky-top">
         <br />
         <h2 className="text-light text-center font-weight-bold">
-          T<br />U<br />L<br />O
+          D<br />A<br />L<br />O<br />Y
         </h2>
         <Nav defaultActiveKey="/home" className="flex-column text-light pt-4">
           <NavBarLink icon={path} link={"/paths"} />
