@@ -1,45 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 
-class CompletableCompleteButton extends Component {
-  handleOnClick = () => {
-    const allC = this.props.allCompletables.find(
-      (c) => c.id === this.props.completable.id
-    );
-    this.props.toggleCompletable(allC);
+export default function CompletableCompleteButton({
+  toggleCompletable,
+  allCompletables,
+  completable,
+  completable: { id: completableId, nodes: completableNodes },
+  isComplete,
+  completeNodes,
+}) {
+  const handleOnClick = () => {
+    toggleCompletable(allCompletables.find((c) => c.id === completableId)); //Find the completable with the specified if clicked and toggle it
   };
 
-  allNodeComplete = () => {
-    if (!!this.props.completable.nodes && !!this.props.completable.nodes[0]) {
+  const allNodeComplete = () => {
+    if (!!completableNodes && !!completableNodes[0]) {
       return (
-        !!this.props.completeNodes(this.props.completable) &&
-        !(
-          this.props.completeNodes(this.props.completable).length ===
-          this.props.completable.nodes.length
-        )
+        !!completeNodes(completable) &&
+        !(completeNodes(completable).length === completableNodes.length)
       );
     }
   };
 
-  disabled = () => {
-    return this.allNodeComplete()
-      ? !this.props.isComplete(this.props.completable)
-      : false;
+  const disabled = () => {
+    return allNodeComplete() ? !isComplete(completable) : false;
   };
 
-  render() {
-    return (
-      <Button
-        variant="primary"
-        onClick={this.handleOnClick}
-        disabled={this.disabled()}
-        block
-      >
-        {this.props.isComplete(this.props.completable) ? "Unmark" : "Mark"}{" "}
-        Complete
-      </Button>
-    );
-  }
+  return (
+    <Button
+      variant="primary"
+      onClick={handleOnClick}
+      disabled={disabled()}
+      block
+    >
+      {isComplete(completable) ? "Unmark" : "Mark"} Complete
+    </Button>
+  );
 }
-
-export default CompletableCompleteButton;
