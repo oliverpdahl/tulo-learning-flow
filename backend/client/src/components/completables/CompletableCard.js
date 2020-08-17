@@ -23,18 +23,10 @@ class CompletableCard extends Component {
           style={{ textDecoration: "none" }}
         >
           <CompletableHeader
-            completable={this.props.completable}
-            allCompletables={this.props.allCompletables}
-            isComplete={this.props.isComplete}
+            {...this.props}
             completeNodes={this.completeNodes}
           />
-          <CompletableBody
-            completable={this.props.completable}
-            allCompletables={this.props.allCompletables}
-            toggleCompletable={this.props.toggleCompletable}
-            completeNodes={this.completeNodes}
-            isComplete={this.props.isComplete}
-          />
+          <CompletableBody {...this.props} completeNodes={this.completeNodes} />
         </Link>
       </Card>
     );

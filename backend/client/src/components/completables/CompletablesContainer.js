@@ -15,6 +15,8 @@ function CompletablesContainer(props) {
           allCompletables={props.allCompletables}
           toggleCompletable={props.toggleCompletable}
           isComplete={isComplete}
+          hasNodes={hasNodes}
+          hasContentBlocks={hasContentBlocks}
         />
       ))
     );
@@ -22,6 +24,14 @@ function CompletablesContainer(props) {
 
   const isComplete = (completable) => {
     return props.allCompletables.find((c) => c.id === completable.id).complete;
+  };
+
+  const hasNodes = (c) => {
+    return !!c.nodes && !!c.nodes[0];
+  };
+
+  const hasContentBlocks = (c) => {
+    return !!c.content_blocks && !!c.content_blocks[0];
   };
 
   return (

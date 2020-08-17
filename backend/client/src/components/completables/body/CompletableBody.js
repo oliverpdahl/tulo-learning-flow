@@ -5,15 +5,7 @@ import CompletableContentBlocks from "./CompletableContentBlocks";
 import CompletableBottomRow from "./bottomRow/CompletableBottomRow";
 
 function CompletableBody(props) {
-  const { completable } = props;
-
-  const hasNodes = (c) => {
-    return !!c.nodes && !!c.nodes[0];
-  };
-
-  const hasContentBlocks = (c) => {
-    return !!c.content_blocks && !!c.content_blocks[0];
-  };
+  const { completable, hasNodes, hasContentBlocks } = props;
 
   return (
     <Accordion.Collapse eventKey={completable.id}>

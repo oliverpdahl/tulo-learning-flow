@@ -4,34 +4,25 @@ import CompletableTitle from "./CompletableTitle";
 import CompletableCompleteStatus from "./CompletableCompleteStatus";
 import CompletableProgressBar from "./CompletableProgressBar";
 
-class CompletableHeader extends Component {
-  render() {
-    return (
-      <Accordion.Toggle
-        as={Card.Header}
-        eventKey={this.props.completable.id}
-        className="text-primary"
-      >
-        <Container fluid>
-          <Row>
-            <CompletableCompleteStatus
-              completable={this.props.completable}
-              allCompletables={this.props.allCompletables}
-              isComplete={this.props.isComplete}
-            />
-            <CompletableTitle completable={this.props.completable} />
-            {!!this.props.completable.nodes &&
-              !!this.props.completable.nodes[0] && (
-                <CompletableProgressBar
-                  completable={this.props.completable}
-                  completeNodes={this.props.completeNodes}
-                />
-              )}
-          </Row>
-        </Container>
-      </Accordion.Toggle>
-    );
-  }
+function CompletableHeader(props) {
+  const { completable } = props;
+  return (
+    <Accordion.Toggle
+      as={Card.Header}
+      eventKey={completable.id}
+      className="text-primary"
+    >
+      <Container fluid>
+        <Row>
+          <CompletableCompleteStatus {...props} />
+          <CompletableTitle completable={completable} />
+          {!!completable.nodes && !!completable.nodes[0] && (
+            <CompletableProgressBar {...props} />
+          )}
+        </Row>
+      </Container>
+    </Accordion.Toggle>
+  );
 }
 
 export default CompletableHeader;
