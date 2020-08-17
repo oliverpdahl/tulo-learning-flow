@@ -1,17 +1,11 @@
-import React, { Component } from "react";
-import { Col } from "react-bootstrap";
+import React from "react";
 
-class Source extends Component {
-  render() {
-    return (
-      !!(this.props.resource || this.props.creator) && (
-        <footer class="blockquote-footer text-right pb-3">
-          {this.props.creator}{" "}
-          <cite title="Source Title">{this.props.resource}</cite>
-        </footer>
-      )
-    );
-  }
+export default function Source({creator, resource}) {
+  return (
+    !!(resource || creator) && (
+      <footer class="blockquote-footer text-right pb-3">
+        {creator}{" "}
+        <cite title="Source Title">{resource}</cite>
+      </footer>
+  )
 }
-
-export default Source;
