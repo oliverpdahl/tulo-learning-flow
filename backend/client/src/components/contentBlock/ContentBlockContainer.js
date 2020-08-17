@@ -1,11 +1,6 @@
-import React, { Component } from "react";
-import { Media } from "react-bootstrap";
+import React from "react";
 import ContentBlockBody from "./ContentBlockBody";
 
-class ContentBlockContainer extends Component {
-  render() {
-    return <ContentBlockBody contentBlock={this.props.contentBlock} />;
-  }
+export default function ContentBlockContainer({ contentBlock }) {
+  return <ContentBlockBody contentBlock={contentBlock} />;
 }
-
-export default ContentBlockContainer;
