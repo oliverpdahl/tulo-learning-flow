@@ -1,18 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { ProgressBar, Col } from "react-bootstrap";
 
-class CompletableProgressBar extends Component {
-  render() {
-    return (
-      <Col>
-        <ProgressBar
-          now={this.props.completeNodes(this.props.completable).length}
-          min={0}
-          max={this.props.completable.nodes.length}
-        />
-      </Col>
-    );
-  }
+export default function CompletableProgressBar({ completeNodes, completable }) {
+  return (
+    <Col>
+      <ProgressBar
+        now={completeNodes(completable).length}
+        min={0}
+        max={completable.nodes.length}
+      />
+    </Col>
+  );
 }
-
-export default CompletableProgressBar;
