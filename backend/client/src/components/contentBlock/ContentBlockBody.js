@@ -1,43 +1,45 @@
-import React, { Component } from "react";
-import { Media, Row, Col } from "react-bootstrap";
-import ContentBlockTextBlock from "./ContentBlockTextBlock";
+import React from "react";
 import Passage from "../content/Passage";
-import Source from "../content/Source";
-import { Player } from "video-react";
 import Video from "../content/Video";
 
-class ContentBlockBody extends Component {
-  listContent = () => {
+function ContentBlockBody({ contentBlock }) {
+  const hasContents = (c) => {
+    return !!c.contents;
+  };
+  const listContent = () => {
     return (
-      !!this.props.contentBlock.contents &&
-      this.props.contentBlock.contents.map((content) => {
-        switch (content.type) {
+      hasContents(contentBlock) &&
+      contentBlock.contents.map((content) => {
+        const {
+          type,
+          img_link,
+          img_creator,
+          img_resource,
+          text,
+          creator,
+          resource,
+          link,
+        } = content;
+        // eslint-disable-next-line default-case
+        switch (type) {
           case "Passage":
             return (
               <Passage
-                img_link={content.img_link}
-                img_creator={content.img_creator}
-                img_resource={content.img_resource}
-                text={content.text}
-                creator={content.creator}
-                resource={content.resource}
+                img_link={img_link}
+                img_creator={img_creator}
+                img_resource={img_resource}
+                text={text}
+                creator={creator}
+                resource={resource}
               />
             );
           case "Video":
-            return (
-              <Video
-                creator={content.creator}
-                resource={content.resource}
-                link={content.link}
-              />
-            );
+            return <Video creator={creator} resource={resource} link={link} />;
         }
       })
     );
   };
-  render() {
-    return <div>{this.listContent()}</div>;
-  }
+  return <div>{listContent()}</div>;
 }
 
 export default ContentBlockBody;
