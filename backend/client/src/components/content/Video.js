@@ -1,31 +1,24 @@
-import React, { Component } from "react";
-import { Row, Col, Image } from "react-bootstrap";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
 import Source from "./Source";
 import ReactPlayer from "react-player";
 
-class Video extends Component {
-  render() {
-    return (
-      <Row>
-        {!!this.props.link && (
-          <Col>
-            <div className="player-wrapper">
-              <ReactPlayer
-                className="react-player"
-                url={this.props.link}
-                width="100%"
-                height="100%"
-              />
-            </div>
-            <Source
-              creator={this.props.creator}
-              resource={this.props.resource}
+export default function Video({ link, creator, resource }) {
+  return (
+    <Row>
+      {!!link && (
+        <Col>
+          <div className="player-wrapper">
+            <ReactPlayer
+              className="react-player"
+              url={link}
+              width="100%"
+              height="100%"
             />
-          </Col>
-        )}
-      </Row>
-    );
-  }
+          </div>
+          <Source creator={creator} resource={resource} />
+        </Col>
+      )}
+    </Row>
+  );
 }
-
-export default Video;
