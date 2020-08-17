@@ -1,15 +1,11 @@
-import React, { Component } from "react";
-import { Col, Nav } from "react-bootstrap";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class NavBarLink extends Component {
-  render() {
-    return (
-      <Nav.Link className="text-light text-center" href={this.props.link}>
-        <FontAwesomeIcon icon={this.props.icon} size="2x" />
-      </Nav.Link>
-    );
-  }
+export default function NavBarLink({ link, icon }) {
+  return (
+    <NavLink className="text-light text-center" href={link}>
+      <FontAwesomeIcon icon={icon} size="2x" />
+    </NavLink>
+  );
 }
-
-export default NavBarLink;
