@@ -1,36 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import CompletableHeader from "./header/CompletableHeader";
 import CompletableBody from "./body/CompletableBody";
 import { Link } from "react-router-dom";
 import slugify from "slugify";
 
-class CompletableCard extends Component {
-  completeNodes = (completable) => {
-    if (!!completable.nodes && !!completable.nodes[0]) {
-      return completable.nodes.filter((n) => this.props.isComplete(n) === true);
+function CompletableCard(props) {
+  const { completable, isComplete } = props;
+
+  const completeNodes = (c) => {
+    if (!!c.nodes && !!c.nodes[0]) {
+      return c.nodes.filter((n) => isComplete(n) === true);
     }
   };
 
-  render() {
-    return (
-      <Card>
-        <Link
-          to={`/paths/${slugify(
-            this.props.completable.title
-          ).toLocaleLowerCase()}`}
-          exact
-          style={{ textDecoration: "none" }}
-        >
-          <CompletableHeader
-            {...this.props}
-            completeNodes={this.completeNodes}
-          />
-          <CompletableBody {...this.props} completeNodes={this.completeNodes} />
-        </Link>
-      </Card>
-    );
-  }
+  return (
+    <Card>
+      <Link
+        to={`/paths/${slugify(completable.title).toLocaleLowerCase()}`}
+        exact
+        style={{ textDecoration: "none" }}
+      >
+        <CompletableHeader {...props} completeNodes={completeNodes} />
+        <CompletableBody {...props} completeNodes={completeNodes} />
+      </Link>
+    </Card>
+  );
 }
 
 export default CompletableCard;
