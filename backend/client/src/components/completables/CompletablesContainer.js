@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Accordion, Col, Button } from "react-bootstrap";
+import React from "react";
+import { Accordion, Col } from "react-bootstrap";
 import CompletableCard from "./CompletableCard";
 import { connect } from "react-redux";
 import { toggleCompletable } from "../../actions/toggleCompletable";
