@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Video from "../content/Video";
 
-class AboutContainer extends Component {
-  render() {
-    return (
+export default function AboutContainer() {
+  return (
+    <div>
       <Col>
         <Container fluid>
           <Row>
@@ -16,8 +16,6 @@ class AboutContainer extends Component {
           </Row>
         </Container>
       </Col>
-    );
-  }
+    </div>
+  );
 }
-
-export default AboutContainer;
