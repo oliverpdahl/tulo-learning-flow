@@ -4,16 +4,20 @@ import CompletableCard from "./CompletableCard";
 import { connect } from "react-redux";
 import { toggleCompletable } from "../../actions/toggleCompletable";
 
-function CompletablesContainer(props) {
+function CompletablesContainer({
+  localCompletables,
+  allCompletables,
+  toggleCompletable,
+}) {
   const listCompletables = () => {
     return (
-      !!props.localCompletables.map &&
-      props.localCompletables.map((completable) => (
+      isMappable(localCompletables) &&
+      localCompletables.map((completable) => (
         <CompletableCard
           eventKey={completable.id}
           completable={completable}
-          allCompletables={props.allCompletables}
-          toggleCompletable={props.toggleCompletable}
+          allCompletables={allCompletables}
+          toggleCompletable={toggleCompletable}
           isComplete={isComplete}
           hasNodes={hasNodes}
           hasContentBlocks={hasContentBlocks}
@@ -23,7 +27,7 @@ function CompletablesContainer(props) {
   };
 
   const isComplete = (completable) => {
-    return props.allCompletables.find((c) => c.id === completable.id).complete;
+    return allCompletables.find((c) => c.id === completable.id).complete;
   };
 
   const hasNodes = (c) => {
@@ -32,6 +36,10 @@ function CompletablesContainer(props) {
 
   const hasContentBlocks = (c) => {
     return !!c.content_blocks && !!c.content_blocks[0];
+  };
+
+  const isMappable = (c) => {
+    return !!c.map;
   };
 
   return (
