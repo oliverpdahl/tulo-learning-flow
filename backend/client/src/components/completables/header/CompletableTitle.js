@@ -1,12 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col } from "react-bootstrap";
 
-class CompletableTitle extends Component {
-  render() {
-    if (!!this.props.completable) {
-      return <Col>{this.props.completable.title}</Col>;
-    }
-  }
+export default function CompletableTitle({ completable: { title } }) {
+  return <Col>{title}</Col>;
 }
-
-export default CompletableTitle;
