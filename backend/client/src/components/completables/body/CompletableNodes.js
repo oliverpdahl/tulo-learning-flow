@@ -1,21 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import CompletablesContainer from "../CompletablesContainer";
 
-class CompletableNodes extends Component {
-  render() {
-    return (
-      <Row className="nodes pb-3">
-        <Col>
-          <CompletablesContainer
-            localCompletables={this.props.nodes}
-            allCompletables={this.props.allCompletables}
-            toggleCompletable={this.props.toggleCompletable}
-          />
-        </Col>
-      </Row>
-    );
-  }
+export default function CompletableNodes(props) {
+  return (
+    <Row className="nodes pb-3">
+      <Col>
+        <CompletablesContainer {...props} localCompletables={props.nodes} />
+      </Col>
+    </Row>
+  );
 }
-
-export default CompletableNodes;
