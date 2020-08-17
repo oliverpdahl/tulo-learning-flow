@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Card, Accordion } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Card, Accordion } from "react-bootstrap";
 import CompletableTitle from "./CompletableTitle";
 import CompletableCompleteStatus from "./CompletableCompleteStatus";
 import CompletableProgressBar from "./CompletableProgressBar";
 
 function CompletableHeader(props) {
-  const { completable } = props;
+  const { completable, hasNodes } = props;
   return (
     <Accordion.Toggle
       as={Card.Header}
@@ -16,9 +16,7 @@ function CompletableHeader(props) {
         <Row>
           <CompletableCompleteStatus {...props} />
           <CompletableTitle completable={completable} />
-          {!!completable.nodes && !!completable.nodes[0] && (
-            <CompletableProgressBar {...props} />
-          )}
+          {hasNodes(completable) && <CompletableProgressBar {...props} />}
         </Row>
       </Container>
     </Accordion.Toggle>
