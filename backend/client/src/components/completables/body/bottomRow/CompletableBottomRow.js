@@ -1,24 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import CompletableCompleteButton from "./CompletableCompleteButton";
 
-class CompletableBottomRow extends Component {
-  render() {
-    return (
+export default function CompletableBottomRow(props) {
+  return (
+    <div>
       <Row className="bottom-row">
         <Col xs={12} sm={8} md={9}></Col>
         <Col>
-          <CompletableCompleteButton
-            completable={this.props.completable}
-            allCompletables={this.props.allCompletables}
-            toggleCompletable={this.props.toggleCompletable}
-            completeNodes={this.props.completeNodes}
-            isComplete={this.props.isComplete}
-          />
+          <CompletableCompleteButton {...props} />
         </Col>
       </Row>
-    );
-  }
+    </div>
+  );
 }
-
-export default CompletableBottomRow;
