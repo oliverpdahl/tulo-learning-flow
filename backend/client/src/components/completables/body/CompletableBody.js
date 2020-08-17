@@ -1,41 +1,41 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Card, Accordion } from "react-bootstrap";
 import CompletableNodes from "./CompletableNodes";
 import CompletableContentBlocks from "./CompletableContentBlocks";
 import CompletableBottomRow from "./bottomRow/CompletableBottomRow";
 
-class CompletableBody extends Component {
-  render() {
-    return (
-      <Accordion.Collapse eventKey={this.props.completable.id}>
-        <Card.Body>
-          <Container fluid>
-            {!!this.props.completable.nodes &&
-              !!this.props.completable.nodes[0] && (
-                <CompletableNodes
-                  nodes={this.props.completable.nodes}
-                  allCompletables={this.props.allCompletables}
-                  toggleCompletable={this.props.toggleCompletable}
-                />
-              )}
-            {!!this.props.completable.content_blocks &&
-              !!this.props.completable.content_blocks[0] && (
-                <CompletableContentBlocks
-                  contentBlocks={this.props.completable.content_blocks}
-                />
-              )}
-            <CompletableBottomRow
-              completable={this.props.completable}
-              allCompletables={this.props.allCompletables}
-              toggleCompletable={this.props.toggleCompletable}
-              completeNodes={this.props.completeNodes}
-              isComplete={this.props.isComplete}
+function CompletableBody(props) {
+  const { completable, allCompletables, toggleCompletable } = props;
+
+  const completableHasNodes = (c) => {
+    return !!c.nodes && !!c.nodes[0];
+  };
+
+  const completableHasContentBlocks = (c) => {
+    return !!c.content_blocks && !!c.content_blocks[0];
+  };
+
+  return (
+    <Accordion.Collapse eventKey={completable.id}>
+      <Card.Body>
+        <Container fluid>
+          {completableHasNodes(completable) && (
+            <CompletableNodes
+              nodes={completable.nodes}
+              allCompletables={allCompletables}
+              toggleCompletable={toggleCompletable}
             />
-          </Container>
-        </Card.Body>
-      </Accordion.Collapse>
-    );
-  }
+          )}
+          {completableHasContentBlocks(completable) && (
+            <CompletableContentBlocks
+              contentBlocks={completable.content_blocks}
+            />
+          )}
+          <CompletableBottomRow {...props} />
+        </Container>
+      </Card.Body>
+    </Accordion.Collapse>
+  );
 }
 
 export default CompletableBody;
