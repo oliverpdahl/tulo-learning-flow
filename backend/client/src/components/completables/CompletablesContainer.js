@@ -17,21 +17,18 @@ class CompletablesContainer extends Component {
           .slice()
           .sort((a, b) => (a.title > b.title ? 1 : -1))
       : this.props.localCompletables;
-    return (
-      this.isMappable(completables) &&
-      completables.map((completable) => (
-        <CompletableCard
-          key={completable.id}
-          eventKey={completable.id}
-          completable={completable}
-          allCompletables={this.props.allCompletables}
-          toggleCompletable={this.props.toggleCompletable}
-          isComplete={this.isComplete}
-          hasNodes={this.hasNodes}
-          hasContentBlocks={this.hasContentBlocks}
-        />
-      ))
-    );
+    return completables.map((completable) => (
+      <CompletableCard
+        key={completable.id}
+        eventKey={completable.id}
+        completable={completable}
+        allCompletables={this.props.allCompletables}
+        toggleCompletable={this.props.toggleCompletable}
+        isComplete={this.isComplete}
+        hasNodes={this.hasNodes}
+        hasContentBlocks={this.hasContentBlocks}
+      />
+    ));
   };
 
   isComplete = (completable) => {
