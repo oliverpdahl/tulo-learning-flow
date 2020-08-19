@@ -18,12 +18,12 @@ function CompletableCard(props) {
     <Card>
       <Link
         to={`/paths/${slugify(completable.title).toLocaleLowerCase()}`}
-        exact
+        exact="true"
         style={{ textDecoration: "none" }}
       >
         <CompletableHeader {...props} completeNodes={completeNodes} />
-        <CompletableBody {...props} completeNodes={completeNodes} />
       </Link>
+      <CompletableBody {...props} completeNodes={completeNodes} />
     </Card>
   );
 }

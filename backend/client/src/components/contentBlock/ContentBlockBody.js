@@ -10,13 +10,11 @@ function ContentBlockBody({ contentBlock }) {
     return (
       hasContents(contentBlock) &&
       contentBlock.contents.map((content) => {
-        // eslint-disable-next-line default-case
-        switch (content.type) {
-          case "Passage":
-            return <Passage {...content} />;
-          case "Video":
-            return <Video {...content} />;
-        }
+        return content.type === "Passage" ? (
+          <Passage {...content} key={content.id} />
+        ) : (
+          <Video {...content} key={content.id} />
+        );
       })
     );
   };

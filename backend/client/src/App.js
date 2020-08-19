@@ -29,7 +29,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props.paths);
     return (
       <Router>
         <Container fluid>
