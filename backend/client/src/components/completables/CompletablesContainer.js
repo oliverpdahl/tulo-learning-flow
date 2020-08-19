@@ -25,7 +25,7 @@ class CompletablesContainer extends Component {
           eventKey={completable.id}
           completable={completable}
           allCompletables={this.props.allCompletables}
-          toggleCompletable={toggleCompletable}
+          toggleCompletable={this.props.toggleCompletable}
           isComplete={this.isComplete}
           hasNodes={this.hasNodes}
           hasContentBlocks={this.hasContentBlocks}
